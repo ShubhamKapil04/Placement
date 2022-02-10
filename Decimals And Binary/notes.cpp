@@ -3,35 +3,37 @@ using namespace std;
 
 int main(){
 
-    int n;
+    int amount;
     cout << " Total number of cash ";
-    cin >> n;
+    cin >> amount;
     
-    int cash = 100;
+    int RS100, RS50, RS20, RS10;
 
-    switch (cash)
+    switch (1)
     {
-    case 100:
-        cash = n / 100 ;
-        cout << "100 Notes : " << cash  << endl;
+    case 1:
+        RS100 = amount / 100 ;
+        amount = amount % 100 ;
+        cout << "100 Notes : " << RS100  << endl;
+         
     
-    case 50:
-        
-        cash = cash / 50;
-        cout << "50 Notes : " << cash << endl;
+    case 2:
+        RS50 = amount / 50;
+        amount = amount % 50;
+        cout << "50 Notes : " << RS50 << endl;
 
-    case 20:
-        
-        cash = cash/ 20;
-        cout << "20 Notes : " << cash << endl;
+    case 3:
+        RS20 = amount / 20;
+        amount = amount % 20;
+        cout << "20 Notes : " << RS20 << endl;
     
-    case 10:
-
-        cash = cash/ 10;
-        cout << "10 Notes : " << cash << endl;
+    case 4:
+        RS10 = amount / 10;
+        amount = amount % 10;
+        cout << "10 Notes : " << RS10 << endl;
     
     }
 
 
-
+   return 0;
 }
