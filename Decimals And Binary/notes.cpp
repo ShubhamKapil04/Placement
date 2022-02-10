@@ -14,8 +14,7 @@ int main(){
     case 1:
         RS100 = amount / 100 ;
         amount = amount % 100 ;
-        cout << "100 Notes : " << RS100  << endl;
-         
+        cout << "100 Notes : " << RS100  << endl;    
     
     case 2:
         RS50 = amount / 50;
@@ -33,7 +32,5 @@ int main(){
         cout << "10 Notes : " << RS10 << endl;
     
     }
-
-
    return 0;
 }
