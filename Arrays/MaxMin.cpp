@@ -42,7 +42,7 @@ int main(){
      int size;
      cin >> size;
 
-     int num[100];
+     int num[100] = {1, 2, 45, 50};
 
      //Taking input in Arrays
 
@@ -54,5 +54,5 @@ int main(){
      cout << "Max Value of Array  is : " << getMax(num, size) << endl;
      cout << "Min Value of Array  is : " << getMin(num, size) << endl;
 
-     
+     return 0;
 }
