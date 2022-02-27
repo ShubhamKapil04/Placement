@@ -1,0 +1,21 @@
+Approach 1 for Count Number of Occurrences in a Sorted Array
+
+1. Simply do a modified binary search such that
+2. Find the first occurrence of X like this:
+
+ a. Check if the middle element of the array is equal to X.
+    1. If the equal or greater element is at mid then reduce the partition from start to mid-1. 
+       As we will have the first occurrence on the left side of mid of array then.
+   
+    2. If the middle element is smaller then we will check in the right side of the middle element as the array is sorted.
+       Return the first occurrence.
+
+
+3. Now similarly find the last occurrence of X in the array by doing
+
+   Check if the middle element of the array is equal to X
+   If the equal or smaller element is at mid then increase the partition from mid+1 to high. As we will have the last occurrence on the right side of mid of array then.
+   Else search in the left side of array
+   return the last occurrence
+
+4. Now the number of occurrences is simply the last occurrence – first occurrence+1
