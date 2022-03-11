@@ -1,0 +1,26 @@
+Sorting Approach
+Approach: Initially, we will calculate the sum of all the ‘A[i]’ for buying the apples without the coupon. Then, we will calculate the ‘M’th highest element in the array ‘ARR’ and subtract the coins require for buying it as we will get it for free if used coupon optimally. To get the ‘M’th highest element, we can sort the array.
+ 
+
+Algorithm : 
+
+Initialize a variable ‘sum’ as 0 to calculate the sum of the array ‘ARR’.
+Run a loop ‘i’ from 1 to ‘N’:
+Increment ‘sum’ by ‘ARR[i]’.
+Sort the ‘ARR’ to get all values in ascending order.
+Subtract the ‘sum’ by ‘ARR[N - M]’ as while applying coupon, we will buy last ‘M’ apples from the sorted ‘ARR’, and we will get the apple present at index ‘N - M’ as free.
+Return the ‘sum’ as the final result.
+Time Complexity
+O(N*log(N)), where ‘N’ is the length of the array ‘ARR’.
+
+ 
+
+Since we are sorting the given array ‘ARR’, the time complexity will be O(N*log(N)). Further, we are iterating a loop that will cost us O(N) time. Thus, the overall time complexity is O(N*log(N)).
+
+Space Complexity
+O(1),
+
+ 
+
+Constant extra space is required. Hence, the overall Space Complexity is O(1).
+
