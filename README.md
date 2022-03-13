@@ -1,0 +1,6 @@
+# Placement
+Code Test
+This Respo Contain Code of my Placement Journy........
+Hope you find it help full ;)...
+
+Have a Nice day!
