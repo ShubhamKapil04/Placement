@@ -38,5 +38,5 @@ using namespace std;
             m = m >> 1;
         }
         int ans = (~n) & mask;
-        return ans;
+        return ans;                                                                             
     }
