@@ -10,7 +10,7 @@ private:
         }
         
         return 0;
-    }
+    } 
     
     char toLowerCase(char ch) {
     if( (ch >='a' && ch <='z') || (ch >='0' && ch <='9') )
