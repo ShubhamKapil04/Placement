@@ -53,6 +53,14 @@ int main(){
    // is allocated on heap.
    int *ptr  = new int[10];
 
+   // If the value is given to the heap memory then we have to terminate that memory ourself only so 
+   // for that we have to use keyword
+
+   //// Release memory pointed by pointer-variable
+    // Syntax delete pointer-variable;   
+
+    delete [] ptr; 
+
 
     return 0;
 }
