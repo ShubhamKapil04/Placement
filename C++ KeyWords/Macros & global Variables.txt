@@ -1,0 +1,36 @@
+Macros and the Global Variable
+ 
+
+Suppose in a code the value pi(3.14) is used many times, instead of always writing 3.14 everywhere in the code, what we can do is define this value to some variable, say pi at the beginning of the program, and now every time we need the value 3.14, we just need to write pi.
+
+ 
+
+What we can do is that we can create a global variable with the value 3.14 and then use it anywhere as desired. There is one issue in using global variables, and that is if someone changes the value of pi in our code at any point of time in any of the functions, we could lose that original value.
+
+ 
+
+To avoid such a situation, what we do is use macros. 
+
+ 
+
+The syntax for using it:
+
+#define pi 3.14
+ 
+
+This is done after declaring the header files at the beginning itself so that this value can be used in the later encountered functions.
+Here, what we are doing is that we are declaring the value of the pi as 3.14 using the macros (#) define, which locks the value and makes it unchangeable.
+
+ 
+
+Another advantage is that it prevents extra storage in the memory for declaring a new variable. Using macros, we have specified that the value we are using is a part of the compiler code, hence no need to create any extra memory.
+
+ 
+
+Now, discussing the advantages of the global variable:
+
+When we want to use the same variable with modified values in each of them, then we can use global variables as the changes done in one function are visible in all the others.
+It saves time for passing the values by reference in the functions.
+ 
+
+Due to accidental changes, this method is not preferred much.
