@@ -1,41 +1,35 @@
 #include<iostream>
 using namespace std;
 
-bool isShorted(int *arr, int size)
+int getSum(int *arr, int size)
 {
-    // Base case
+    //Base Case
 
-    if(size == 0 || size == 1)
+    if(size == 0)
     {
-        return true;
+        return 0;
     }
 
-    //Shoreted nhi hai
-    if(arr[0] > arr[1])
+    if(size == 1)
     {
-        return false;
+        return arr[0];
     }
 
-    else{
-        bool ans = isShorted(arr + 1, size - 1);
-        return ans;
-    }
+    // Recursive Relation
+    int remainingPart = getSum(arr+1, size - 1);
+    int sum = arr[0] + remainingPart;
+
+    return sum;
 }
 
 int main()
 {
-    int arr[] = {1, 4, 6, 7, 9};
-    int size = sizeof(arr)/ sizeof(arr[0]);
+    int arr[5] = {1, 2, 3, 4, 5};
+    int size = 5;
 
-    bool ans = isShorted(arr, size);
 
-    if(ans)
-    {
-        cout << " Array is shorted" << endl;
-    }
-    else{
-        cout << " Array is  not shorted" << endl;
-    }
+    int sum = getSum(arr, size);
+    cout << sum;
 
     return 0;
 }
