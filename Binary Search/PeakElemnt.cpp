@@ -7,7 +7,7 @@ int PeakElemnt(int arr[], int size)
     int end =  size - 1;
     int mid = start + (end - start)/2;
    
-    while(start<end)
+    while(start<end)    
     {
         // incressing in inline 
         if(arr[mid] < arr[mid + 1])
