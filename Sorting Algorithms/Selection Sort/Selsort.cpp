@@ -19,5 +19,5 @@ int main(){
         swap(arr[MinIndex], arr[i]);
     }
     return 0;
-    
+
 }
