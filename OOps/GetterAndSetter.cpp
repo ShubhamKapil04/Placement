@@ -34,9 +34,14 @@ class Student{
         marks = m;
     }
 
-    void setGrade(char g)
+    void setGrade(char g )//, float marks)
     {
-        grade = g;
+        //Inside Setter we can write Condition 
+        //if(marks > 90)
+        //{
+            grade = g;
+       // }
+        
     }
 
     // int setGrade()
@@ -90,4 +95,5 @@ int main()
     cout << " Student Marks " << s1.getMarkes() << endl;
     cout << " Student Grade " << s1.getGrade() << endl;
 
+    cout << sizeof(s1) << endl;
 }
