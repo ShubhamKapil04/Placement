@@ -69,6 +69,7 @@ int main()
     cout << endl;
     cout << endl;
 
+    //With the help of -> (this) we can use setter & getter in the dynmaic memory Allocation
     s2->setHealth(200);
     s2->setMarks(78.54);
     s2->setName('S');
