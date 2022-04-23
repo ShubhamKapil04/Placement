@@ -1,21 +1,22 @@
 #include<iostream>
+
 using namespace std;
 
-class Abstraction{
+class Abstraction {
     private:
-    int a;
+        int a;
     int b;
 
     public:
 
-    void set(int x, int y){
-        this->a = x;
-        this->b = y;
-    }
+        void set(int x, int y) {
+            this - > a = x;
+            this - > b = y;
+        }
 
-    void display(){
+    void display() {
         cout << "Value at a is --> " << a << endl;
-        
+
         cout << "Value at b is --> " << b << endl;
 
     }
@@ -25,7 +26,7 @@ class Abstraction{
 
 
 
-int main(){
+int main() {
     Abstraction Kartik;
     Kartik.set(30, 50);
     Kartik.display();
