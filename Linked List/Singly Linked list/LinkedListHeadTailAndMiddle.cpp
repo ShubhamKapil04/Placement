@@ -130,7 +130,7 @@ int main()
     // cout << "Head --> " << head->data << endl;
     // cout << "Tail --> " << tail->data << endl;
 
-    deletionOfAnyNode(head, 7);
+    deletionOfAnyNode(head, 1);
 
     print(head);
 }
