@@ -10,28 +10,17 @@ class Node{
         this-> data = data;
         this-> Next = NULL;
     }
+
+    ~Node(){
+        int value = this->data;
+        if(this->Next != NULL){
+            delete Next;
+            this->Next = NULL;
+        }
+        cout << " Memeory is free for node with data "<< value  << endl;
+    }
 };
 
-void insertionAtPosition(Node* &head, int position, int d){
-
-    //Starting from the head
-    Node* temp = head;
-    //With the help of this we can we cam iterate from the starting
-    int cnt = 1;
-
-    while(cnt < position - 1){
-        temp = temp->Next;
-        cnt++;
-    }
-
-    //Creating new node to add data
-    Node* NodeToInsert = new Node(d);
-    //
-    NodeToInsert->Next = temp->Next;
-    // Temp next come to node to insert
-    temp->Next = NodeToInsert;
-
-}
 
 void insertAtHead(Node* &head, int d)
 {
@@ -51,6 +40,64 @@ void insertionAtTail(Node* &tail, int d){
     tail->Next = temp;
     //now Tail will be change to temp
     tail =  temp;
+}
+void insertionAtPosition(Node* &head, Node* &tail, int position, int d){
+    //Inserting at head
+    if(position == 1){
+        insertAtHead(head, d);
+        return;
+    }
+    //Starting from the head
+    Node* temp = head;
+    //With the help of this we can we cam iterate from the starting
+    int cnt = 1;
+
+    while(cnt < position - 1){
+        temp = temp->Next;
+        cnt++;
+    }
+    //Inserting At last position
+    if(temp->Next == NULL){
+        insertionAtTail(tail, d);
+        return ;
+    }
+    //Creating new node to add data
+    Node* NodeToInsert = new Node(d);
+    //
+    NodeToInsert->Next = temp->Next;
+    // Temp next come to node to insert
+    temp->Next = NodeToInsert;
+
+}
+//deletion of any Node
+void deletionOfAnyNode(Node* &head, int Position){
+
+    //Deletion From the headNode or Starting node
+    if(Position == 1){
+        Node* temp = head;
+        head = head->Next;
+        //memeory free
+        temp->Next = NULL;
+        delete temp;
+    }
+    //deleting Any Middle Node & last Node
+    else{
+        Node* curt = head;
+        Node* prev = NULL;
+
+        int cnt = 1;
+        while(cnt < Position){
+            prev = curt;
+            curt = curt->Next;
+            cnt++;
+        }
+        
+        prev->Next = curt->Next;
+        curt->Next = NULL;
+        delete curt;
+    }
+
+
 }
 
 //Print fuction
@@ -78,7 +125,12 @@ int main()
     insertionAtTail(tail, 54);
     insertionAtTail(tail, 2354);
 
-    insertionAtPosition(head, 4, 15);
+    insertionAtPosition(head, tail, 7, 15);
+
+    // cout << "Head --> " << head->data << endl;
+    // cout << "Tail --> " << tail->data << endl;
+
+    deletionOfAnyNode(head, 2);
 
     print(head);
 }
