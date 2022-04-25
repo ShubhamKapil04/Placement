@@ -122,7 +122,8 @@ int main()
     insertionAtTail(tail, 89);
     insertionAtAnyPosition(head, tail, 1, 90);
     print(head);
-    deleteNode(head, 1);
+    deleteNode(head, 5);
     print(head);
+    cout << tail->data << endl;
 
 }
