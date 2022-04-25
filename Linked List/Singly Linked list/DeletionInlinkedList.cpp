@@ -23,7 +23,7 @@ class Node{
 void insertionAtHead(Node* &head, int d){
     //Creatinig new Node for insertion
     Node* temp = new Node(d);
-    
+
     //temp node will point to next node
     temp->Next = head;
     //head will be temp now
@@ -109,7 +109,8 @@ void print(Node* &head){
     cout << endl;
 }
 
-int main(){
+int main()
+{
 
     Node* node1 = new Node(32);
     
