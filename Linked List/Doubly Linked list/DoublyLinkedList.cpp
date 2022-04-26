@@ -15,18 +15,30 @@ class Node{
     }
 };
 
-void insertAtHead(Node* &head, int d){
+void insertAtHead(Node* &head, Node* &tail, int d){
     
+    if(head == NULL){
+        Node* temp = new Node(d);
+        head = temp;
+        tail = temp;
+    }
+    else{
     Node* temp = new Node(d);
 
     temp->next = head;
 
     head = temp;
+    }
 
 }
 
-void insertionAtTail(Node* &tail, int d){
+void insertionAtTail(Node* &tail, Node* &head, int d){
 
+    if(tail == NULL){
+        Node* temp = new Node(d);
+        tail = temp;
+        head = temp;
+    }
     Node* temp = new Node(d);
 
     tail->next = temp;
@@ -38,7 +50,7 @@ void insertionAtTail(Node* &tail, int d){
 void insertAtPosition(Node* &head, Node* &tail, int Position, int d){
 //If the postionof new node is 1
     if(Position == 1){
-        insertAtHead(head, d);
+        insertAtHead(head, tail, d);
         return;
     }
 
@@ -46,14 +58,14 @@ void insertAtPosition(Node* &head, Node* &tail, int Position, int d){
     Node* temp = head;
     int cnt = 1;
 
-    while(cnt != Position){
+    while(cnt < Position - 1){
         temp = temp->next;
         cnt++;
     }
 
     //If you inserting on the Last Postion
     if(temp->next == NULL){
-        insertionAtTail(tail, d);
+        insertionAtTail(tail, head, d);
         return;
     }
 
@@ -88,19 +100,19 @@ int getLenght(Node* &head){
 
 int main()
 {
-    Node* node1 = new Node(19);
+    // Node* node1 = new Node(19);
 
-    Node* head = node1;
-    Node* tail = node1;
+    Node* head = NULL;
+    Node* tail = NULL;
     // cout << node1->pre << endl;
     // cout << node1->next << endl;
 
 
-    insertAtHead(head, 32);
-    insertionAtTail(tail, 43);
+    insertAtHead(head, tail, 32);
+    insertionAtTail(tail, head, 43);
     print(head);
 
-    insertAtPosition(head, tail, 2, 890);
+    insertAtPosition(head, tail, 1, 890);
     cout << getLenght(head) << endl;
     print(head);
 }

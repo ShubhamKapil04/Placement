@@ -51,7 +51,7 @@ void insertionAtAnyPosition(Node* &head, Node* &tail, int Position, int d){
     Node* temp = head;
     int cnt = 1;
 
-    while(cnt != Position){
+    while(cnt < Position - 1){
         temp = temp->Next;
         cnt++;
     }
@@ -124,6 +124,5 @@ int main()
     print(head);
     deleteNode(head, 5);
     print(head);
-    cout << tail->data << endl;
 
 }
