@@ -12,10 +12,12 @@ class Node{
     }
 
     ~Node(){
-        if(this->next = NULL){
+        int value = this->data;
+        if(this->next != NULL)
             delete next;
             next = NULL;
         }
+        cout << "The deleted node value is" << value << endl;
     }
 };
 
@@ -50,7 +52,11 @@ void insertNode(Node* &tail, int element, int d){
 void print(Node* &tail){
 
     Node* temp = tail;
-
+    //empty list
+    if(tail == NULL){
+        cout << "Linked list is Empty";
+        return;
+    }
     // while(tail->next != temp){
     //     cout << tail->data << " ";
     //     tail = tail->next;
@@ -84,6 +90,12 @@ void deletion(Node* &tail, int value){
             curr = curr->next;
         }
         prev->next = curr->next;
+        //1Node Linked list
+
+        if(curr = prev){
+            tail = NULL;
+        }
+        //2node Linked list
         if(tail == curr){
             tail = prev;
         }
@@ -103,8 +115,8 @@ int main()
     insertNode(tail, 1, 3);
     print(tail);
 
-    // insertNode(tail, 3, 5);
-    // print(tail);
+    insertNode(tail, 3, 5);
+    print(tail);
 
     // insertNode(tail, 5, 7);
     // print(tail);
