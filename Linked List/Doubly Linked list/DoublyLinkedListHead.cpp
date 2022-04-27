@@ -14,12 +14,13 @@ class Node{
     }
 
     ~Node(){
-        // this-value = this->data;
+        int value = this->data;
         if(this->next != NULL){
             delete next;
             this->next = NULL;
 
         }
+        cout << " Deleted Node Value is--> " << value << endl;
     }
 
 };
@@ -160,7 +161,7 @@ int main()
     print(head);
     cout << getLenght(head) << endl;
     
-    deletion(head, tail, 5);
+    deletion(head, tail, 1);
     print(head);
 
 }
