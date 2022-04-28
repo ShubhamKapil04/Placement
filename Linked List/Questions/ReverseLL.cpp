@@ -96,6 +96,12 @@ int main()
 
 }
 
+
+//Complexity
+
+// Time Complexity ---> O(n);
+// Space Complexity --> O(1);
+
 /****************************************************************
 
     Following is the class structure of the LinkedListNode class:
