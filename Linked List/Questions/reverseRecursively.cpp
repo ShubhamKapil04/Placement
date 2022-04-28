@@ -28,3 +28,23 @@ LinkedListNode<int> *reverseLinkedList(LinkedListNode<int> *head)
     return rest;
 
 }
+
+void reverse(LinkedListNode<int> *head, LinkedListNode<int> *curr, LinkedListNode<int> *prev){
+	
+	//base case
+	if(curr == NULL){
+		head = prev;
+		return ;
+	}
+	
+	LinkedListNode<int> *forward = curr->next;
+	reverse(head, forword, curr);
+	curr->next = prev;
+}
+LinkedListNode<int> *reverseLinkedList(LinkedListNode<int> *head) 
+{
+	LinkedlistNode<int> curr = head;
+	LinkedlistNode<int> prev = NULL;
+	reverse(head, curr, prev);
+	return head;
+}
