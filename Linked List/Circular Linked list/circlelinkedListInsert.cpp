@@ -6,24 +6,27 @@ class Node{
     int data;
     Node* next;
 
+    //Creating Constructor
     Node(int data){
         this->data = data;
         this->next = NULL;
     }
 
+    //Creating Distructor
     ~Node(){
         int value = this->data;
-        if(this->next != NULL)
+        if(this->next != NULL){
             delete next;
             next = NULL;
         }
-    
+        cout << "The free value is " << value << endl;
+    }
+ 
 };
 
 void insertNode(Node* &tail, int element, int d){
-    //Assuming that we have the element are in the linked list
 
-    //emepty case
+    //linked list is empty
     if(tail == NULL){
         Node* newNode = new Node(d);
         tail = newNode;
@@ -31,8 +34,7 @@ void insertNode(Node* &tail, int element, int d){
         return;
     }
     else{
-        // non-empty list
-        //Asumming that the element is present in the list
+        //non-empty List
 
         Node* curr = tail;
 
@@ -40,61 +42,58 @@ void insertNode(Node* &tail, int element, int d){
             curr = curr->next;
         }
 
-        //element found -> curr is represented element node
+        //elemnet is found -> curr is represent the element
         Node* temp = new Node(d);
         temp->next = curr->next;
-        curr->next =  temp;
+        curr->next = temp;
+
     }
 }
-
-
 
 void print(Node* &tail){
 
     Node* temp = tail;
-    //empty list
+
+    //If linked list is empty
     if(tail == NULL){
-        cout << "Linked list is Empty";
+        cout << " Linked list is empty" << endl;
         return;
     }
-    // while(tail->next != temp){
-    //     cout << tail->data << " ";
-    //     tail = tail->next;
-    // }
-    // cout << endl;
 
-    do{
-        cout << tail->data << " ";
+    //if linked list have node
+
+    do
+    {
+        cout << tail-> data <<" ";
         tail = tail->next;
-    } while (tail != temp);
+    } while (tail!= temp);
     cout << endl;
-    
 }
 
 void deletion(Node* &tail, int value){
-
     //Empty List
-    if(tail == NULL){
-        cout << " List is empty " << endl;
+    if(tail==NULL){
+        cout << "List is empty" << endl;
         return;
     }
     else{
-        // Non - empty
+        //Non - empty list
 
-        // Assuming that "value" is present in Linked list
         Node* prev = tail;
-        Node* curr = prev->next;
+        Node* curr = prev -> next;
 
         while(curr -> data != value){
             prev = curr;
             curr = curr->next;
         }
+
         prev->next = curr->next;
-        //1Node Linked list
+        //when curr = prev
+        //Single node
         if(curr = prev){
             tail = NULL;
         }
-        //2node Linked list
+        //2 or more node
         if(tail == curr){
             tail = prev;
         }
@@ -102,31 +101,28 @@ void deletion(Node* &tail, int value){
         delete curr;
     }
 }
-
-
 int main()
 {
-    // Node* node1 = new Node(23);
+    // Node* node1 = new Node(12);
 
-    Node* tail = NULL;
+    
     // Node* tail = node1;
+    Node* tail = NULL;
 
-    insertNode(tail, 1, 3);
+    //cout << node1->data << endl;
+
+    insertNode(tail, 1, 543);
     print(tail);
 
-    insertNode(tail, 3, 5);
-    print(tail);
+    // insertNode(tail,543, 70);
+    // print(tail);
 
-    insertNode(tail, 5, 7);
-    print(tail);
+    // insertNode(tail, 70, 45);
+    // print(tail);
 
-    insertNode(tail, 3, 10);
-    print(tail);
+    // insertNode(tail, 45, 15);
+    // print(tail);
 
-    insertNode(tail, 5, 11);
+    deletion(tail,543 );
     print(tail);
-
-    deletion(tail, 3);
-    print(tail);
-
 }
