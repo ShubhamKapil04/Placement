@@ -3,7 +3,7 @@ using namespace std;
 int main(){
 
     int num = 1;
-    char ch = 'a';
+    char ch = 'g';
 
     switch (ch)
     {
