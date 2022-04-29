@@ -3,6 +3,7 @@ using namespace std;
 
 int main(){
 
+    //creating variable in static memoery
     int a, b;
 
     cin >> a;
