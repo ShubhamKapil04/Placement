@@ -12,29 +12,40 @@ class Node
     // }
 };
 
+int getLenght(Node* &head){
 
-int getLenght(Node* head){
-	int len = 0;
-	while(head != NULL){
-		len++;
-		head = head -> next;
-	}
-	return len;
+    Node* temp = head;
+    int len = 0;
+
+    //constion upto loop will work
+    while(temp != NULL){
+        temp = temp->next;
+        len++;
+    }
+
+    // cout << len << endl;
+    // returning the lenght
+    return len;
 }
-Node *findMiddle(Node *head) {
+
+
+void middleNode(Node* &head){
+
+    //First We have to get the Lenght of Linked List
     int len = getLenght(head);
-	
-	int ans = (len/2) + 1;
-	
-	Node* temp = head;
-	
-	int cnt = 1;
-	while(cnt != ans){
-		temp = temp -> next ;
-		cnt++;
-	}
-    cout << temp;
-	return temp;	
+
+    //ans where we get the middle of lenght
+
+    int ans = (len/2) + 1;
+
+    Node* temp = head;
+
+    int cnt = 1;
+    while(cnt != ans){
+        temp = temp->next;;
+        cnt++;
+    }
+    cout << temp->data << endl;
 }
 
 void print(Node* &head){
@@ -67,5 +78,5 @@ int main()
     Node* head = node1;
 
     print(head);
-    findMiddle(head);
+    middleNode(head);
 }

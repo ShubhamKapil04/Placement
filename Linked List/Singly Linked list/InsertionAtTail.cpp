@@ -32,6 +32,42 @@ void insertionAtTail(Node* &tail, int d){
     tail = tail->next;
 }
 
+int getLenght(Node* &head){
+
+    Node* temp = head;
+    int len = 0;
+
+    //constion upto loop will work
+    while(temp != NULL){
+        temp = temp->next;
+        len++;
+    }
+
+    // cout << len << endl;
+    // returning the lenght
+    return len;
+}
+
+
+void middleNode(Node* &head){
+
+    //First We have to get the Lenght of Linked List
+    int len = getLenght(head);
+
+    //ans where we get the middle of lenght
+
+    int ans = (len/2) + 1;
+
+    Node* temp = head;
+
+    int cnt = 1;
+    while(cnt != ans){
+        temp = temp->next;;
+        cnt++;
+    }
+    cout << temp->data << endl;
+}
+
 void print(Node* &head){
 
     Node* temp = head;
@@ -52,4 +88,6 @@ int main(){
     insertionAtTail(tail, 25);
     insertionAtTail(tail, 271057);
     print(head);
+
+    middleNode(head);
 }
