@@ -1,1 +1,1 @@
-int reverse
+  print(head);
