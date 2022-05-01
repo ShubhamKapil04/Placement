@@ -8,10 +8,9 @@ class Node{
 
 };
 
-int reverseKposition(Node* &head, int position){
+Node* reverseKposition(Node* head, int position){
 
     //Step 1
-
     Node* prev = NULL;
     Node* curr = head;
     Node* next = NULL;
@@ -62,8 +61,8 @@ int main()
 
     int k = 2;
 
-    int reverse = reverseKposition(head, k);
+    return reverseKposition(head, k);
 
-    print(head);
+    // print(head);
 
 }

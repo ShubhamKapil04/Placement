@@ -16,7 +16,7 @@ LinkedListNode<int> *reverseLinkedList(LinkedListNode<int> *head)
     }
 
     // Reverse the rest of Linked List
-    LinkedListNode<int> *rest = reverseLinkedList(head->next);
+    LinkedListNode<int> *prev = reverseLinkedList(head->next);
 
     // Changing the reference of next node next to itself
     head->next->next = head;
@@ -25,26 +25,26 @@ LinkedListNode<int> *reverseLinkedList(LinkedListNode<int> *head)
     head->next = NULL;
 
     // Return the reverse Linked List.
-    return rest;
+    return prev;
 
 }
 
-void reverse(LinkedListNode<int> *head, LinkedListNode<int> *curr, LinkedListNode<int> *prev){
+// void reverse(LinkedListNode<int> *head, LinkedListNode<int> *curr, LinkedListNode<int> *prev){
 	
-	//base case
-	if(curr == NULL){
-		head = prev;
-		return ;
-	}
+// 	//base case
+// 	if(curr == NULL){
+// 		head = prev;
+// 		return ;
+// 	}
 	
-	LinkedListNode<int> *forward = curr->next;
-	reverse(head, forword, curr);
-	curr->next = prev;
-}
+// 	LinkedListNode<int> *forward = curr->next;
+// 	reverse(head, forword, curr);
+// 	curr->next = prev;
+// }
 LinkedListNode<int> *reverseLinkedList(LinkedListNode<int> *head) 
 {
-	LinkedlistNode<int> curr = head;
-	LinkedlistNode<int> prev = NULL;
-	reverse(head, curr, prev);
-	return head;
+	// LinkedlistNode<int> curr = head;
+	// LinkedlistNode<int> prev = NULL;
+	// reverse(head, curr, prev);
+	return reverseLinkedList(head);
 }
