@@ -1,1 +1,1 @@
- // print(head);
+ tail->next = head->next;
