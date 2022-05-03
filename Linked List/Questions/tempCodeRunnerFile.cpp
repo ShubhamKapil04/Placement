@@ -1,1 +1,1 @@
- // insertNode(tail, 1, 3);
+ // print(head);
