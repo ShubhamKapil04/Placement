@@ -74,6 +74,20 @@ Node* intersectionPoint(Node* &head){
 
 }
 
+void deleteLoop(Node* &head){
+
+    if(head == NULL){
+        return;
+    }
+    Node* start = intersectionPoint(head);
+    Node* temp = start;
+
+    while(temp->next != start){
+        temp = temp->next;
+    }
+    temp->next = NULL;
+}
+
 void print(Node* &head){
     Node* temp = head;
 
@@ -109,7 +123,10 @@ int main()
     Node* loop = intersectionPoint(head);
 
     cout << "The starting point of loop is " << loop->data << endl;
-    // print(head);
+
+    deleteLoop(head);
+    
+    print(head);
      
 }
 
