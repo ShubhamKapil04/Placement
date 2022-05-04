@@ -23,33 +23,33 @@ class Node{
     }
 };
 
-void insertionAtHead(Node* &head, int d){
+void insertionAtHead(Node* &tail, int d){
 
     //Creating new Node
-    if(head == NULL){
+    if(tail == NULL){
         Node* newNode = new Node(d);
-        newNode = head;
+        newNode = tail;
         return;
     }
 
     //Create new node
     Node* temp = new Node(d);
-    temp->next = head;
-    head = temp;
+    tail->next = temp;
+    tail = temp;
 }
 
-Node* deleteNode(Node* &head){
+void deleteNode(Node* &head){
 
     //Empty
     if(head == NULL){
-        return NULL;
+        return ;
     }
 
     Node* curr = head;
 
     while(curr != NULL){
-
-        if((curr->next != NULL) && curr->data == curr-> next -> data){
+        // (curr->next != NULL) &&
+        if( (curr->next != NULL) && curr-> data == curr -> next -> data){
             Node* next_next = curr->next->next;
             Node* NodetoDelete = curr->next;
             delete(NodetoDelete);
@@ -59,7 +59,7 @@ Node* deleteNode(Node* &head){
             curr = curr->next;
         }
     }
-    return head;
+    return ;
 }
 
 void print(Node* &head){
@@ -80,17 +80,19 @@ int main()
 
     Node* node1 = new Node(5);
     Node* head = node1;
+    Node* tail = node1;
 
-    insertionAtHead(head, 5);
-    insertionAtHead(head, 4);
-    insertionAtHead(head, 4);
-    insertionAtHead(head, 3);
-    insertionAtHead(head, 2);
-    insertionAtHead(head, 2);
-    deleteNode(head);
+    insertionAtHead(tail, 5);
+    insertionAtHead(tail, 4);
+    insertionAtHead(tail, 4);
+    insertionAtHead(tail, 3);
+    insertionAtHead(tail, 2);
+    insertionAtHead(tail, 2);
+    cout << "Before Deleting the Node the Linked List is--> " ;
     print(head);
-
-   
+    deleteNode(head);
+    cout << "After deleting the Node the Linked List is--> ";
+    print(head);
 
     // print(head);
 
