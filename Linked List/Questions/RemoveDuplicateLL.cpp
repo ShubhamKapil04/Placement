@@ -13,14 +13,14 @@ class Node{
 
     //Creating Distructor
 
-    ~Node(){
-        int value = data;
-        if(this->next != NULL){
-            delete next;
-            next = NULL;
-        }
-        cout << " Deleted node is " << value << endl;
-    }
+    // ~Node(){
+    //     int value = data;
+    //     if(this->next != NULL){
+    //         delete next;
+    //         next = NULL;
+    //     }
+    //     cout << " Deleted node is " << value << endl;
+    // }
 };
 
 void insertionAtHead(Node* &tail, int d){
@@ -49,7 +49,7 @@ void deleteNode(Node* &head){
 
     while(curr != NULL){
         // (curr->next != NULL) &&
-        if( (curr->next != NULL) && curr-> data == curr -> next -> data){
+        if( curr->next != NULL && curr -> data == curr -> next -> data){
             Node* next_next = curr->next->next;
             Node* NodetoDelete = curr->next;
             delete(NodetoDelete);
@@ -97,3 +97,6 @@ int main()
     // print(head);
 
 }
+
+//Time Complexity --  O(n);
+//Space Complexity -- O(1);
