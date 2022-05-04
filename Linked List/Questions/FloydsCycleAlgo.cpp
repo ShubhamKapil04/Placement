@@ -63,7 +63,7 @@ bool floyedsCycle(Node* &head){
         slow = slow -> next;
 
         if(slow == fast){
-            cout << "present at " << fast->data << endl; 
+            cout << "present at " << fast->data << e
             return true;
         }
     }
