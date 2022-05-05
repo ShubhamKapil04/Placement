@@ -97,3 +97,6 @@ int main()
 
     print(head);
 }
+
+//Time Complexity -- O(n);
+//Space Complexity -- O(1);
