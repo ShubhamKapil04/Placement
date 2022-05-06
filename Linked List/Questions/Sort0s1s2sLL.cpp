@@ -26,6 +26,7 @@ void insert(Node* &head, int d){
     temp->next = head;
     head = temp;
 }
+
 Node* sortList(Node *head)
 {
     int ZeroCount = 0;
