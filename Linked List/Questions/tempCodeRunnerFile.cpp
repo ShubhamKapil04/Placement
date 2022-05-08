@@ -1,1 +1,1 @@
-iostream
+ curr = next;
