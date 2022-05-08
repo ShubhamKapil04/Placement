@@ -72,7 +72,6 @@ Node reverse(Node* &head){
         prev = curr;
         curr = fow;
     }
-    print(head);
     return *prev;
 
 }
@@ -83,12 +82,13 @@ int main()
     Node* node1 = new Node(12);
     Node* head = node1;
 
-    // insertionAtHead(head, 32);
-    // insertionAtHead(head, 34);
-    // insertionAtHead(head, 36);
-    // insertionAtHead(head, 37);
-    // insertionAtHead(head, 38);
-    // insertionAtHead(head, 39);
+    insertionAtHead(head, 32);
+    insertionAtHead(head, 34);
+    insertionAtHead(head, 36);
+    insertionAtHead(head, 37);
+    insertionAtHead(head, 38);
+    insertionAtHead(head, 39);
+    cout << endl;
     print(head);
 
     Node* reverse (head);
