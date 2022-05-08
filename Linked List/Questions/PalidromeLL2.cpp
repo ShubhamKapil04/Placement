@@ -98,6 +98,8 @@ int main()
     Node* temp = middle -> next;
     middle -> next = reverse(temp);
 
+    
+
     //Step 3 Compare fast half with another half
 
     Node* head1 = head;
