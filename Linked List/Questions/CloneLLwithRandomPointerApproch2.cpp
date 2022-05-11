@@ -217,3 +217,7 @@ int main() {
     }
     return 0;
 }  // } Driver Code Ends
+
+
+//Time Complexity = O(n)
+//Space Complexity = O(n)
