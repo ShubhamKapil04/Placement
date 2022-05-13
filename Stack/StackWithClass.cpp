@@ -73,4 +73,6 @@ int main()
     cout << st.peek() << endl; 
 
     cout << st.isEmpty() << endl;
+
+    st.display();
 }
