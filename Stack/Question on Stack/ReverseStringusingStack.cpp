@@ -87,8 +87,9 @@ int main()
     cout << ans << endl;
 
     return 0;
-
-
-
-        
 }
+
+//This is the property of satck Becz it floow LIFO oreder
+// Time Complexity - O(n);
+//Space Complexity - O(n);
+//becz we are using the stack 
