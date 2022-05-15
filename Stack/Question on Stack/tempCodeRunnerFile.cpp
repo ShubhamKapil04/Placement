@@ -1,2 +1,1 @@
-int x;
-        // cin >> x;
+ string a;
