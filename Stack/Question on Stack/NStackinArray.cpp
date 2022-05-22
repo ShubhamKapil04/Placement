@@ -90,85 +90,99 @@ True
 #include<iostream>
 #include<cstring>
 using namespace std;
-class NStack{
-    public:
-    int *arr;
-    int *top;
-    int *next;
-    //Here s means size of array & n means number of stack
-    int s, n;
-    
-    int freeSpot;
 
-    // Creating Constructre
-    Nstack(int N, int S){
-        n = N;
-        s = S;
+class NStack
+{
+public:
+	int *arr;
+	int *top;
+	int *next;
+	
+	//Here s is the size of array and N is the stack
+	int s, n;
+	
+	int freeSpot;
+    NStack(int N, int S)
+    {
+       	s = S;
+      	n = N;
+	 	
+		arr = new int [s];
+		top = new int [n];
+		next = new int[s];
+		
+		//top elemnt insizlization
+// 		memset(top, -1, sizeof(top));
+		for(int i = 0; i < n; i++){
+			top[i] = -1;
+		}
+		
+		//insilisizing Next array
+	   	for(int i = 0; i < s; i++){
+			next[i] = i+1; 
+	  	}
+		
+		//Last element 
+		next[s-1] = -1;
+		
+		//fressSpot Insilization
+		freeSpot = 0;
+    }
 
-        arr = new int [s];
-        top = new int [n];
-        next = new int [s];
+    // Pushes 'X' into the Mth stack. Returns true if it gets pushed into the stack, and false otherwise.
+    bool push(int x, int m)
+    {
+        //empty case
+		if(freeSpot == -1){
+			return false;
+		}
+		
+		//index find by the help of freeSpot
+		int index = freeSpot;
+		
+		//Update the freeSpot
+		freeSpot = next[index];
+		
+		//insert In an araay  where x is the elemnt
+		arr[index] = x;
+		
+		//update next where m is the stack
+		next[index] = top[m-1];
+		
+		//update top
+		top[m-1] = index;
+		
+		return true;
+    }
 
-        // Top element intialize
-        memset(top, -1, sizeof(top));
-        // for(int i = 0; i < n; i++){
-
-        // }
-
-        //Intialaize next arry
-        for(int i = 0; i < s; i++){
-            next[i] = i+1;
-        }
-        //Last index value is -1
-        next[s-1] = -1;
-
-        //Intializing freeSpot
-        freeSpot = 0;
+    // Pops top element from Mth Stack. Returns -1 if the stack is empty, otherwise returns the popped element.
+    int pop(int m)
+    {
+		if(top[m-1] == -1){
+			return -1;
+		}
+        int index = top[m-1];
+		
+		top[m-1] = next[index];
+		
+		next[index] = freeSpot;
+		
+		freeSpot = index;
+		
+		return arr[index];
     }
 };
 
-bool push(int x, int m){
-    //Check if satck is not overflow
-    if(freeSpot == -1){
-        return false;
-    }
-
-    // find index
-
-    int index = freeSpot;
-
-    //update freeSpot
-    freeSpot = next[index];
-
-    //insert element into array
-    arr[index] = x;
-
-    //update next
-    next[index] = top[m-1];
-
-    //update top
-    top[m-1] = index;
-
-    return true;
-}
-
-int pop(int m){
-    //cehck if stack is emppty
-    if(top[m-1] == -1){
-        return -1;
-    }
-
-    int index = top[m-1];
-
-    top[m-1] = next[index];
-
-    next[index] = freeSpot;
-
-    freeSpot = index;
-
-    return arr[index];
-}
 int main()
 {
-    
+    int size;
+    cin >> size;
+
+    int arr[size];
+    for(int i = 0; i < size; i++){
+        cin >> arr[i];
+    }
+
+    NStack obj;
+    obj.push(10, 5);
 }
