@@ -6,6 +6,7 @@ using namespace std;
 int main(){
 
     queue< int > q;
+    //Using queue as a FIFO setup
     q.push(12);
     q.push(1);
     
@@ -13,6 +14,10 @@ int main(){
     q.push(4);
     
     stack<int> s;
+    //Using Stack as a LIFO setup 
+    // And then use the Stack and push the data back to Queue and 
+    //get the  reverse order of the 
+    //Data
 
     while(!q.empty()){
         int element = q.front();
@@ -27,3 +32,6 @@ int main(){
     }
     return 0;
 }
+
+// Time Complexity - O(n)
+// Space Complexity - O(n)
