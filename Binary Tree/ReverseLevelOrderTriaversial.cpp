@@ -1,5 +1,6 @@
 #include<iostream>
 #include<queue>
+#include<stack>
 
 using namespace std;
 
@@ -39,6 +40,36 @@ node* buildTree(node* root){
 //Reverse order Triaversal
 void reverseOrder(node* root){
     
+    // we use the dequeue because we have 2 side of the implimentation
+
+    queue< node* > q;
+    stack< node* > s;
+
+    q.push(root); // pushing the data from the tree to Stack
+
+    // Right subtree visited before the left subtree
+
+    while(!q.empty()){
+
+        root = q.front();
+        q.pop();
+        s.push(root);
+
+        // Enqueue the right child
+        if(root->right)
+        q.push(root->right);
+
+        // Enqueue the left after right
+        if(root->left)
+        q.push(root->left);
+    }
+
+    while (!s.empty()){
+        root = s.top();
+        cout << root->data << " ";
+        s.pop();
+    }
+ 
 }
 
 
@@ -50,6 +81,8 @@ int main()
     //Creating a Tree
 
     root = buildTree(root);
+
+    reverseOrder(root);
 
     return 0;
 }
