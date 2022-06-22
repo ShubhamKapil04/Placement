@@ -119,9 +119,13 @@ public:
         ans.push_back(root->data);
         
         //left side 
+        if(root->left){
         treaversalLeft(root->left, ans);
-        //if left not there
+        }
+
+        else{//if left not there
         treaversalLeft(root->right, ans);
+        }
         
         //wapis aa gye
        // ans.push_back(root->data);
@@ -154,9 +158,13 @@ public:
         // ans.push_back(root->data);
         
         //right side call
+        if(root->right){
         treaversalRight(root->right, ans);
+        }
+        else{
         //if right subtree not there
         treaversalRight(root->left, ans);
+        }
         
         ans.push_back(root->data);
     }
