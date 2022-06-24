@@ -114,7 +114,7 @@ int main()
 
     //Creating a Tree
 
-    // root = buildTree(root);
+    //root = buildTree(root);
     buildOrderTree(root);
 
     levelOrderTraiversal(root);
