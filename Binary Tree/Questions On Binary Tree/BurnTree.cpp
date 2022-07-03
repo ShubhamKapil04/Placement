@@ -188,7 +188,7 @@ class Solution {
 
 // { Driver Code Starts.
 
-int main() 
+int main()
 {
     int tc;
     scanf("%d ", &tc);
