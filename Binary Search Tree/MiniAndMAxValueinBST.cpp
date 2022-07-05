@@ -27,6 +27,29 @@ void preOrder(Node* root){
     preOrder(root->right);
 }
 
+
+void PostOrder(Node* root){
+
+    if(root == NULL){
+        return;
+    }
+
+    PostOrder(root->left);
+    PostOrder(root->right);
+    cout << root->data << " ";
+}
+
+void inOrder(Node* root){
+
+    if(root == NULL){
+        return;
+    }
+
+    inOrder(root->left);
+    cout << root->data << " ";
+    inOrder(root->right);
+}
+
 Node* BuildBST(Node* root, int d){
 
     //base case
@@ -58,6 +81,30 @@ void takeInput(Node* &root){
     }
 }
 
+Node* maxValue(Node* root){
+
+    //crate temp node
+
+    Node* temp = root;
+
+    while(temp->right != NULL){
+        temp = temp->right;
+    }
+
+    return temp;
+}
+
+Node* minValue(Node* root){
+
+    Node* temp = root;
+
+    while(temp->left != NULL){
+        temp = temp->left;
+    }
+
+    return temp;
+}
+
 int main(){
 
     Node* root = NULL;
@@ -69,6 +116,22 @@ int main(){
     cout << "Printing BST " << endl;
 
     preOrder(root);
+
+    cout << "Printing PostOrder BST " << endl;
+
+    PostOrder(root);
+
+
+    cout << "Printing inOrder BST " << endl;
+
+    inOrder(root);
+
+    Node* ans = maxValue(root);
+    cout << "Maximmum Value in BST is --> " << ans-> data;
+
+    Node* ans2 = minValue(root);
+    cout << "Minimum Value in BST is --> "<< ans2->data;
+
     
     return 0;
 }
