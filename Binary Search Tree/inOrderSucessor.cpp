@@ -62,7 +62,7 @@ Node* inOrderSuccessor(Node* root, Node* temp){
 
     while(root != NULL){
 
-        if(temp->data >= root->data){
+        if(temp->data >= root->data){// temp ka jo data hai bo badha hai to right ki tarf jana hai
             root = root->right;
         }
         else{
