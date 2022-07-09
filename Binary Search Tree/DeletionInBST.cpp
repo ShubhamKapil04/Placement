@@ -56,54 +56,65 @@ void inOrder(Node* root){
     cout << root->data << " ";
     inOrder(root->right);
 }
+int minVAl(Node* root){
 
-// Node* deleteBST(Node* root, int d){
+    int minv = root->data;
 
-//     if(root == NULL){
-//     return root;
-//     }
+    while(root->left != NULL){
+        minv = root->left->data;
+        root = root->left;
+    }
 
-//     if(root->data == d){
-//     //     delete root->data;
-//     //     return root;
-//         // 0 child
-//         if(root->left == NULL && root->right == NULL ){
-//             delete root;
-//             return NULL;
-//         }
+    return minv;
+}
 
-//         // 1 Child
-//         if(root->left != NULL && root->right == NULL){
-//             Node* temp = root->left;
-//             delete root;
-//             return temp;
-//         }
-//         if(root->left == NULL && root->right != NULL){
-//             Node* temp = root->right;
-//             delete root;
-//             return temp;
-//         }
+Node* deleteBST(Node* root, int d){
 
-//         // 2 Child
+    if(root == NULL){
+    return root;
+    }
 
-//         if(root->left != NULL && root->right != NULL){
-//             int mini = minVal(root->right)->data;
-//             root->data = mini;
-//             root->right = deleteBST(root->right, mini);
-//             return root;
-//         }
-//     }
+    if(root->data == d){
+    //     delete root->data;
+    //     return root;
+        // 0 child
+        if(root->left == NULL && root->right == NULL ){
+            delete root;
+            return NULL;
+        }
 
-//     else if(root->data > d){
-//         //left part
-//         root->left = deleteBST(root->left, d);
-//         return root;
-//     }
-//     else{
-//         root->right = deleteBST(root->right, d);
-//         return root;
-//     }
-// }
+        // 1 Child
+        if(root->left != NULL && root->right == NULL){
+            Node* temp = root->left;
+            delete root;
+            return temp;
+        }
+        if(root->left == NULL && root->right != NULL){
+            Node* temp = root->right;
+            delete root;
+            return temp;
+        }
+
+        // 2 Child
+
+        if(root->left != NULL && root->right != NULL){
+            root->data = minVAl(root->right);
+            root->right = deleteBST(root->right, root->data);
+            return root;
+        }
+    }
+
+    else if(root->data > d){
+        //left part
+        root->left = deleteBST(root->left, d);
+        return root;
+    }
+    else{
+        root->right = deleteBST(root->right, d);
+        return root;
+    }
+}
+
 
 
 int main(){
@@ -117,12 +128,10 @@ int main(){
     cout << "Print inOrder Traversal " << " " ;
     inOrder(root);
 
-    // root = deleteBST(root, 30);
+    root = deleteBST(root, 50);
 
     cout << "Print inOrder Traversal " << " " ;
     inOrder(root);
 
-
     return 0;
-
 }
