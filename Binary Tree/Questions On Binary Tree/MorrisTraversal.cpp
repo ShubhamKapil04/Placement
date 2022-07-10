@@ -46,7 +46,7 @@ void MorriesTraversal(struct tNode* root){
                     pre->right = NULL;
                     cout << curr->data << " ";
                     curr = curr->right;
-            }
+                 }
         }
     }
 }
