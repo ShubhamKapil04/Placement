@@ -84,7 +84,7 @@ int main(){
     cout << "Printing data " << " ";
     inOrder(root);
 
-    Node* temp = root->left;
+    Node* temp = root->right->left->right;
 
     Node* ans = inOrderSuccessor(root, temp);
 
