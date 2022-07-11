@@ -70,7 +70,7 @@ Node* inOrderSuccessor(Node* root, Node* temp){
             root = root->left;
         }
     }
-    return successor;
+    return successor;   
 }
 
 int main(){
