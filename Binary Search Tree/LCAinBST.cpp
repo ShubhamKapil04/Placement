@@ -52,16 +52,16 @@ void inOrder(Node* &root){
     inOrder(root->right);
 }
 
-Node* LCAinBST(Node* root, Node* p, Node* q){
+Node* LCAinBST(Node* root, int p, int q){
 
     if(root == NULL){
         return NULL;
     }
 
-    if(root->data > p->data && root->data > q->data);
+    if(root->data > p && root->data > q);
     return LCAinBST(root->left, p, q);
 
-    if(root->data < p->data && root->data < q->data);
+    if(root->data < p && root->data < q);
     return LCAinBST(root->right, p, q);
 
     return root;
@@ -75,16 +75,16 @@ int main(){
     takeInput(root);
     
     inOrder(root);
+    cout << endl;
 
     cout << "LCA is --> " << " ";
 
-    Node* p = root->left->left;
-    Node* q = root->left->right;
+    int p = 2;
+    int q = 5;
 
-    Node* LCA = LCAinBST(root, p, q);
+    cout << LCAinBST(root, p, q)->data << endl;
 
-    cout << LCA->data << endl;
+    // cout << LCA->data << endl;
 
     return 0;
-
 }
