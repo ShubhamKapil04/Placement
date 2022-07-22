@@ -1,6 +1,53 @@
 #include<iostream>
 using namespace std;
 
+class Node{
+
+    public:
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int d){
+        this->data = d;
+        this->left = NULL;
+        this->right = NULL;
+    }
+};
+
+Node* buildTree (Node* root, int d){
+
+    if(root == NULL){
+        root = new Node(d);
+        return ;
+    }
+
+    if(root->data > d){
+        root->left = buildTree(root-left, d);
+    }
+    else{
+        root->right = buildTree(root->right, d);
+    }
+}
+
+void takeInput(Node* &root){
+
+    int data;
+    cin >> data;
+    while(!data){
+        root = buildTree(root, d);
+        cin >> data;
+    }
+}
+
+void inOrder(Node* root){
+    if(root == NULL)
+    return;
+
+    inOrder(root->left);
+    cout << root->data << " ";
+    inOrder(root->right); 
+}
 class TreeNode{
     public:
     int maxNode, minNode, maxSize;
@@ -41,4 +88,11 @@ class solution{
 
 int main(){
 
+    Node* root == NULL;
+
+    takeInput(root);
+
+    inOrder(root);
+
+    return 0;
 }
