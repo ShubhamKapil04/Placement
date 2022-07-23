@@ -1,8 +1,7 @@
 #include<iostream>
 using namespace std;
 
-clss heap{
-
+class heap{
     public:
     int arr[1000];
     int size;
@@ -44,8 +43,16 @@ clss heap{
 
 int main(){
 
+    heap h;
+
+    h.insertion(60);
+    h.insertion(50);
+    h.insertion(40);
+    h.insertion(30);
+    h.insertion(20);
 
 
+    h.print();
 
-
+    return 0;
 }
