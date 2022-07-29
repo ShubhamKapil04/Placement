@@ -28,7 +28,7 @@ int main(){
 
     priority_queue<int, vector<int>, greater<int> > minheap;
     
-    minheap.push(12);
+    minheap.push(12); 
     minheap.push(45);
     minheap.push(56);
     minheap.push(60);
