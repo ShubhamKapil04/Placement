@@ -1,4 +1,3 @@
-for(int i = 0; i , maxheap.size(); i++){
-    //     cout << maxheap.top() << " ";
-    //     maxheap.pop();
-    // }
+ for(int i = 0; i < ans.size(); i++){
+        cout << ans[i] << " ";
+    }
