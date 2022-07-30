@@ -13,13 +13,13 @@ int main(){
     int k = 3;
 
     for(int i = 0; i < size; i++){
-        maxHeap.push(abs(arr[i] - x) , arr[i]);
+        maxHeap.push(make_pair(abs(arr[i] - x) , arr[i]));
         if(maxHeap.size() > k){
             maxHeap.pop();
         }
     }
 
-    while(!maxHeap.size()){
+    while(!maxHeap.empty()){
         cout << maxHeap.top().second << " ";
         maxHeap.pop();
     }

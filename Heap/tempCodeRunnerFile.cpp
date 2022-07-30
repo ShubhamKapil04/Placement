@@ -1,3 +1,1 @@
- for(int i = 0; i < ans.size(); i++){
-        cout << ans[i] << " ";
-    }
+ priority_queue< pair < int, int > > maxHeap;
