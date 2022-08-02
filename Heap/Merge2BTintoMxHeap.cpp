@@ -10,7 +10,7 @@ using namespace std;
 1
 4 3
 10 5 6 2
-12 7 9 *.
+12 7 9 */
 
 
 // } Driver Code Ends
@@ -55,6 +55,10 @@ class Solution{
         int size = ans.size();
         for(int i = size/2 - 1; i >= 0; i--){
             heapify(ans, size, i);
+        }
+
+        for(int i = 0; i < ans.size(); i++){
+            cout << ans[i] << " ";
         }
         
         return ans;
