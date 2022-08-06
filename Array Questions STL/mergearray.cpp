@@ -11,7 +11,7 @@ int main()
     vector<int> nums2 = {2, 5, 6};
     int n = 3;
     int k=m+n-1;
-		int i=m-1,j=n-1;
+	int i=m-1,j=n-1;
 
 
 		while(i>=0 && j>=0)
