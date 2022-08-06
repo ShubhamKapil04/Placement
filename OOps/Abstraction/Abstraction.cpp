@@ -5,7 +5,7 @@ using namespace std;
 class Abstraction {
     private:
         int a;
-    int b;
+        int b;
 
     public:
 
