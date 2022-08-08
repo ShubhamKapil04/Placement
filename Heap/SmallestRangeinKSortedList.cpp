@@ -19,7 +19,7 @@ class node{
 class compare{
     public:
     bool operator()(node* a, node* b){
-        cout << "This is A data -> "<<a->data << "This is B data -> " << b->data << endl;
+        cout << "This is A data -> "<<a->data << " " << "This is B data -> " << b->data << endl;
         return a->data > b->data;
     }
 };
@@ -73,9 +73,10 @@ int main(){
             start = mini;
         }
 
+        cout << "Colum ka next value " << temp->col + 1 << endl;
         if(temp->col + 1 < n){
             maxi = max(maxi, arr[temp->row][temp->col+1]);
-            pq.push(new node (arr[temp->row][temp->col+1]));
+            pq.push(new node (arr[temp->row][temp->col+1], temp->row, temp->col+1));
         }
         else{
             break;
