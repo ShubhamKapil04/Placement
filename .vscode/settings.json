@@ -16,7 +16,8 @@
         "utility": "cpp",
         "bitset": "cpp",
         "initializer_list": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "unordered_map": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
