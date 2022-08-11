@@ -1,3 +1,1 @@
- // for(auto i:m){
-    //     cout << i.first << " " <<  i.second << endl;
-    // }
+ // cout << arr[i] << " " << count << endl;
