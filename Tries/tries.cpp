@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string>
 
 using namespace std;
 
@@ -97,7 +98,7 @@ class Trie{
 
         //if present
         if(root->children[index] != NULL){
-            temp = temp->children[index];
+            temp = root->children[index];
         }else{
             return false;
         }
@@ -138,9 +139,9 @@ int main(){
 
     t->insertWord("abcd");
 
-    cout << "Present or Not --> " << t->searchWord("abcd") << endl;
+    cout << "Present or Not " << t->searchWord("abcd") << endl;
 
     
-
+    return 0;
     
 }
