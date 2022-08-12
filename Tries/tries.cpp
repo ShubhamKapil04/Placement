@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<bits/stdc++.h>
 
 using namespace std;
 
@@ -53,7 +54,7 @@ class Trie{
         }else{// Not present
             // Then crate node
             temp = new TrieNode(word[0]);
-            temp = root->children[index];
+            root->children[index] = temp;
         }
 
         //Recursive call
@@ -136,10 +137,13 @@ class Trie{
 int main(){
     
     Trie *t = new Trie();
-
+    // cout << "hello " << endl;
     t->insertWord("abcd");
-
+    t->insertWord("Hello");
     cout << "Present or Not " << t->searchWord("abcd") << endl;
+    cout << "Present or Not " << t->searchWord("Hello") << endl;
+    
+    
 
     
     return 0;
