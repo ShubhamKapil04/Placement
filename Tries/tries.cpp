@@ -131,6 +131,54 @@ class Trie{
         return searchUtl(root, word);
     }
 
+
+    TrieNode* trieDeleteUtl(TrieNode *root, string word, int height = 0){
+        
+        // Condition if the tree is empty
+        if(!root){
+            return NULL;
+        }
+
+        // The final character of the word is being handled
+        if(height == word.size()){
+
+            /*
+                After removal of the given word/key, the last node is 
+                not the end of the word
+            */
+            if(root->isTerminal){
+                root->isTerminal = false;
+            }
+
+            // In case if the given word isn't prefix of any other word
+            if(trieEmpty(root)){
+                delete (root);
+                root = NULL;
+            }
+            return root;
+            
+        }
+
+        /*
+            In case it is not the last character, repeat for the child using 
+            ASCII value
+        */
+        int index = word[height] - 'a';
+        root->children[index] = trieDelete(root->children[index], word, height + 1);
+
+        /*
+            In case the root does not have any child(its only child gets 
+            removed), then it is not the same for another word. The another 
+            word does not end here.
+        */
+        if(trieEmpty(root) && root->isTerminal == false){
+            // Node deleted
+            delete(root); 
+            root = NULL;
+        }
+        return root;
+    }
+
 };
 
 
@@ -143,6 +191,9 @@ int main(){
     cout << "Present or Not " << t->searchWord("abcd") << endl;
     cout << "Present or Not " << t->searchWord("Hello") << endl;
     
+    // t->trieDelete("Hello");
+
+    cout << "Present or Not "<< t->searchWord("Hello") << endl;
     
 
     

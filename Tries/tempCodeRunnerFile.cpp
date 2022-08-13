@@ -1,2 +1,1 @@
-
-    void insertWord(string word){
+ // t->trieDelete("Hello");
