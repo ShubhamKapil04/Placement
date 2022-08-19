@@ -77,6 +77,34 @@ class Tries{
         return searchUtl(root, word);
     }
 
+    bool deleteWord(TrieNode* root, string word){
+
+        // Base case
+        if(word.length() == 0){
+            root->isTerminal = false;
+            //check if that root have other child
+            if(root->children.size() != 0)
+            return false;
+            else{
+                return true;
+            }
+        }
+
+        TrieNode* temp = root->children[word[0]];
+        if(deleteWord(temp, word.substr(1))){
+            root->children.erase(word[0]);
+        }
+        if(root->isTerminal || root->children.size() != 0)
+        return false;
+        else{
+            true;
+        }
+    }
+    
+
+    void deleteWord(string word){
+        deleteUtl(root, word);
+    }
     // TrieNode* deleteUtl(TrieNode* root, string word, int height = 0){
 
     //     if(root == NULL){
@@ -104,6 +132,8 @@ int main(){
     t->insertWord("hello");
 
     cout << "Present or Not " << t->searchWord("hello") << endl;
+
+    t->deleteWord("hello");
 
     return 0;
 }
