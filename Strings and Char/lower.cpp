@@ -24,7 +24,7 @@ string convertString(string &str)
 }
 
 int main(){
-    string str = {"i love programming"};
+    string str = {"i loVe proGramMing"};
 
     string ans = convertString(str);
 
