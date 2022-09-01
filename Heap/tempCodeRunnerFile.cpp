@@ -1,1 +1,1 @@
-j+1 
+cout << i << endl;

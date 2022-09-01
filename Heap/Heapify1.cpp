@@ -4,11 +4,15 @@ using namespace std;
 void heapify(int arr[], int n, int i){
 
     int largest = i;
+    cout << i << endl;
+
 
     // Left child
     int l = 2*i+1;
+    cout <<"left --> " << l << endl;
     // Right child
     int r = 2*i+2;
+    cout <<"Right -> " << r << endl;
 
     //  If left child is largest than root
     if(l < n && arr[largest] < arr[l]){
@@ -33,13 +37,15 @@ void heapify(int arr[], int n, int i){
 void heapSort(int arr[], int n){
 
     // build heap from array
-
+    // cout << n << endl;
+    // int m = n/2 - 1;
+    // cout << m << endl;
     for(int i = n/2 - 1; i >= 0; i--){
         heapify(arr, n, i);
     }
 
     for(int i = n-1 ; i > 0; i--){
-
+        cout << "I ka Vlue --> " << i << endl;
         // Move current root to end
         swap(arr[0], arr[i]);
 
