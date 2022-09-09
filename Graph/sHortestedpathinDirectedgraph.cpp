@@ -60,15 +60,23 @@ class Graph{
 int main(){
 
     Graph g;
-    g.addEdges(0, 1, 5);
-    g.addEdges(0, 2, 3);
-    g.addEdges(1, 3, 6);
-    g.addEdges(1, 2, 2);
-    g.addEdges(2, 3, 7);
-    g.addEdges(2, 4, 4);
-    g.addEdges(2, 5, 2);
-    g.addEdges(3, 4, -1);
-    g.addEdges(4, 5, -2);
+    // g.addEdges(0, 1, 5);
+    // g.addEdges(0, 2, 3);
+    // g.addEdges(1, 3, 6);
+    // g.addEdges(1, 2, 2);
+    // g.addEdges(2, 3, 7);
+    // g.addEdges(2, 4, 4);
+    // g.addEdges(2, 5, 2);
+    // g.addEdges(3, 4, -1);
+    // g.addEdges(4, 5, -2);
+
+    g.addEdges(0, 1, 2);
+    g.addEdges(0, 4, 1);
+    g.addEdges(1, 2, 3);
+    g.addEdges(2, 3, 6);
+    g.addEdges(4, 2, 2);
+    g.addEdges(4, 5, 4);
+    g.addEdges(5, 3, 1);
 
     g.print();
 
