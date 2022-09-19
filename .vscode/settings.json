@@ -18,7 +18,9 @@
         "initializer_list": "cpp",
         "valarray": "cpp",
         "unordered_map": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "chrono": "cpp",
+        "algorithm": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
