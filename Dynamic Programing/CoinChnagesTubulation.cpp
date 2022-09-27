@@ -39,8 +39,8 @@ int coinChanges(vector<int> &coins, int ammount){
 
 int main(){
 
-    vector<int> coins = {1, 2, 3};
-    int ammount = 5;
+    vector<int> coins = {2};
+    int ammount = 3;
 
     int MemoSol = coinChanges(coins, ammount);
 
