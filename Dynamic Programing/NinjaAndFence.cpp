@@ -25,7 +25,7 @@ int numberofWay(int n, int k){
 int main(){
 
     int n = 3;
-    int k = 2;
+    int k = 3;
 
     int ans = numberofWay(n, k);
     cout << ans;
