@@ -27,13 +27,33 @@ int subArrayDivK(vector<int> &nums, int k){
         map[remider]++;
         // cout << "remider at each call" << i << "  " << map[remainder] << endl;
     }
+
+    for(auto i: map)
+        cout << i.first << " -->  " << i.second << endl;
+
     return ans;
 }
+
+// void mapi(vector<int> &nums, int k){
+
+//     unordered_map<int, int> mp;
+
+//     for(auto i: nums){
+//         mp[i]++;
+//     }
+
+//     for(auto i:mp){
+//         cout << i.first << " --> " << i.second << endl;
+//     }
+
+// }
 
 int main(){
 
     vector<int> nums = {4, 5, 0, -2, -3, 1};
     int  k = 5;
+
+    // mapi(nums, k);
 
     // int subArrayDivbyK(nums, k);
 
@@ -42,3 +62,4 @@ int main(){
     cout << ans << endl;
     return 0;
 }
+
