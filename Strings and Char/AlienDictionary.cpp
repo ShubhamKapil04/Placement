@@ -35,15 +35,20 @@ public:
             if(str1[i] == str2[i])
                 continue;
             else{
-                // if(mp[str1[i]] > mp[str2[i]])
-                //     return false;
-                // else{
-                //     return true;
-                // }
-                return mp[str1[i]] > mp[str2[i]] ? false : true;
+                if(mp[str1[i]] > mp[str2[i]])
+                    return false;
+                else{
+                    return true;
+                }
+                // return mp[str1[i]] > mp[str2[i]] ? false : true;
             }
             i++;
         } 
+        if(str1.size() > str2.size()) return false;
+        
+            return true;
+
+        // return str1.size() > str2.size() ? false : true;
     }
 
     unordered_map<char, int> mp;
@@ -62,18 +67,20 @@ public:
 
                 string str2 = words[j];
 
-                if(checkOrder(str1, str2)) return true;
+                if(!checkOrder(str1, str2)) return false;
             }
         }
-        return false;
+        return true;
     }
 };
 
 
 int main(){
 
-    vector<string>words = {"hello","leetcode"};
-    string order = "hlabcdefgijkmnopqrstuvwxyz";
+    // vector<string>words = {"hello","leetcode"};
+    vector<string>words = {"word","world","row"};
+    // string order = "hlabcdefgijkmnopqrstuvwxyz";
+    string order = "worldabcefghijkmnpqstuvxyz";
 
     AlienDictionary obj;
 
