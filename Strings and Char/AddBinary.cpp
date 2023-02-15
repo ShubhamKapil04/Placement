@@ -36,7 +36,7 @@ public:
             cout << ans << endl;
 
             carry = carry/2;
-            cout << carry << endl;
+            cout << carry << endl;  
         }
         reverse(ans.begin(), ans.end());
         return ans;
