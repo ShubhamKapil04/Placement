@@ -100,6 +100,6 @@ int main(){
 
     Solution obj;
     int ans = obj.minDiffInBST(root);
-    cout << ans << endl;
+    cout << ans << endl;4
     return 0;
 }
