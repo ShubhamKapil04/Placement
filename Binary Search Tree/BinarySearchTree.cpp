@@ -65,16 +65,35 @@ Node* insertInBST(Node* root, int d){
     }
 }
 
-void preOrder(Node* root){
+// void preOrder(Node* root){
 
-    if(root == NULL){
-        return;
-    }
+//     // if(root == NULL){
+//     //     return;
+//     // }
 
-    cout << root->data <<  " ";
-    preOrder(root->left);
-    preOrder(root->right);
-}
+//     // cout << root->data <<  " ";
+//     // preOrder(root->left);
+//     // preOrder(root->right);
+
+//     Node* prevVal;
+//     int minDistance = 1000000;
+//     cout <<"Prevval -> " << prevVal << endl;
+
+//     if(root == NULL)
+//         return;
+
+//     preOrder(root->left);
+
+//     if(prevVal != NULL){
+//         minDistance = min(minDistance, root->data - prevVal->data);
+//     }
+//     prevVal = root;
+
+//     preOrder(root->right);
+
+//     cout << minDistance << endl;
+
+// }
 
 void takeInput(Node* &root){
 
@@ -96,7 +115,9 @@ int main(){
 
     cout << "Printing BST " << endl;
 
-    levelOrderTraversal(root);
+    // levelOrderTraversal(root);
+
+    preOrder(root);
 
 
     return 0;
