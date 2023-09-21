@@ -1,10 +1,23 @@
-# Placement
-![Static Badge](https://img.shields.io/badge/C%2B%2B-Placement-FF0000?color=Red)
-![GitHub Repo stars](https://img.shields.io/github/stars/ShubhamKapil04/Placement)
-![GitHub forks](https://img.shields.io/github/forks/ShubhamKapil04/Placement?logo=Code&color=blue&link=https%3A%2F%2Fgithub.com%2FShubhamKapil04%2FPlacement)
+
+# C++ DSA Description
+
+This Repo holds all the DSA concepts that you need to prepare if you want to land a Job in a Tech Company.
 
 
-This Respo contains the Code of my Placement Journey........
-I hope you find it helpful  ;)...
+## Environment Variables
 
-Have a Nice day!
+To run this project, you will need to add the following environment variables to your .env file
+
+`MinGW`
+
+`Visual Studio Code`
+
+
+## Import to Local Machine
+
+Install my-project with git-bash
+
+```bash
+  git clone <-- ssh-key of Repository -->
+```
+    
